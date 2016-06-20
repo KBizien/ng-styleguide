@@ -1,0 +1,24 @@
+{
+  "name": "ng-styleguide",
+  "version": "0.0.1",
+  "description": "Living styleguide in an angular 2 webapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KBizien/ng-styleguide.git"
+  },
+  "keywords": [
+    "styleguide",
+    "angular",
+    "components"
+  ],
+  "author": "kbizien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KBizien/ng-styleguide/issues"
+  },
+  "homepage": "https://github.com/KBizien/ng-styleguide#readme"
+}
