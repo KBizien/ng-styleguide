@@ -1,6 +1,5 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
 module.exports = {
@@ -9,11 +8,9 @@ module.exports = {
     'vendor': './src/vendor.ts',
     'app': './src/main.ts'
   },
-
   resolve: {
     extensions: ['', '.js', '.ts']
   },
-
   module: {
     loaders: [
       {
@@ -22,7 +19,8 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: 'html'
+        exclude: [helpers.root('src/index.html')],
+        loader: 'html',
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
@@ -31,7 +29,7 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+        loader: 'style!css?sourceMap'
       },
       {
         test: /\.css$/,
@@ -40,14 +38,14 @@ module.exports = {
       }
     ]
   },
-
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills']
     }),
 
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.html',
+      chunksSortMode: 'dependency',
     })
   ]
 };
