@@ -1,6 +1,6 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
 import { StyleguideComponent } from './styleguide.component';
-import { BreweryListComponent } from './brewery-list.component';
+import { RankingListComponent } from './ranking-list.component';
 
 const routes: RouterConfig = [
   {
@@ -8,8 +8,8 @@ const routes: RouterConfig = [
     component: StyleguideComponent
   },
   {
-    path: 'breweryList',
-    component: BreweryListComponent
+    path: 'rankings',
+    component: RankingListComponent
   },
 ];
 
