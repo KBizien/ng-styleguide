@@ -1,15 +1,16 @@
 import { Component, Input } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { Ranking } from './ranking';
 
 @Component({
   selector: 'ranking-item',
   template: `
-	<div class="rankingContent">
+	<a class="rankingContent"  [routerLink]="['/ranking/'+ranking.id]">
 		<div>
 			<img width="50" src="{{ranking.picture}}" alt="" />
 		</div>
 		<div>{{ranking.id}} - {{ranking.name}}</div>
-	</div>
+	</a>
   `,
   styles : [`
 	.rankingContent {
@@ -20,7 +21,8 @@ import { Ranking } from './ranking';
 		padding: 5px;
 		margin: 5px;
 	}
-  `]
+  `],
+   directives: [ROUTER_DIRECTIVES],
 })
 
 export class RankingItemComponent {

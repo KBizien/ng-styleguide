@@ -21,10 +21,10 @@ export class RankingService {
                .catch(this.handleError);
   }
 
-  getRanking(id: number) : Promise<Ranking> {
-     return this.http.get(this.baseUrl+"/ranking/"+id)
+  getRanking(id) : Promise<Ranking> {
+    return this.http.get(this.baseUrl+"/rankings")
                .toPromise()
-               .then(response => response.json().data)
+               .then(response => response.json().data[parseInt(id)])
                .catch(this.handleError);
   }
 
