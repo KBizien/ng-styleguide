@@ -5,6 +5,10 @@ import { RankingDetailComponent } from './ranking-detail.component';
 
 const routes: RouterConfig = [
   {
+    path: '',
+    component: RankingListComponent
+  },
+  {
     path: 'styleguide',
     component: StyleguideComponent
   },

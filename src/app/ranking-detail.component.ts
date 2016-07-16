@@ -15,24 +15,22 @@ import { Router, ActivatedRoute }       from '@angular/router';
 
 export class RankingDetailComponent {
 
-    private sub: any;
-
+  private sub: any;
 	ranking: Ranking;
-  	constructor(private route: ActivatedRoute, private router: Router, private rankingService: RankingService) {
-  	}
 
-  	getRanking(id: number) {
-  		console.log("PARAMS ID", id);
-  		this.rankingService.getRankings(id).then( (ranking) => {
-  			this.ranking = ranking;
-  		});
-  	}
-  	ngOnInit() {
-  		var that = this;
-	  	this.sub = this.route.params.subscribe(params => {
-	       let id = +params['id']; // (+) converts string 'id' to a number
-	  		that.getRanking(id);
-	    });
+  constructor(private route: ActivatedRoute, private router: Router, private rankingService: RankingService) {
+  }
+
+	getRanking(id: number) {
+		console.log("PARAMS ID", id);
+		this.rankingService.getRanking(id).then( (ranking) => {
+			this.ranking = ranking;
+		});
 	}
-
+	ngOnInit() {
+  	this.sub = this.route.params.subscribe( (params) => {
+      let id = +params['id']; // (+) converts string 'id' to a number
+  		this.getRanking(id);
+    });
+  }
 }

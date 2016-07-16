@@ -4,7 +4,7 @@
   "description": "Living styleguide in an angular 2 webapp",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --inline",
+    "start": "webpack-dev-server --progress --colors --watch --inline --hot",
     "test": "karma start",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "serve:build": "http-server ./dist",
@@ -43,6 +43,7 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "angular2-hmr": "^0.8.1",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
