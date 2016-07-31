@@ -4,6 +4,7 @@ import { RankingListComponent } from './ranking-list.component';
 import { RankingDetailComponent } from './ranking-detail.component';
 
 const routes: RouterConfig = [
+  {  path: '', redirectTo: 'rankings'},
   {
     path: '',
     component: RankingListComponent

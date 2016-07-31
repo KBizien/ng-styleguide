@@ -1,7 +1,30 @@
 export class InMemoryDataService {
   createDb() {
     let rankings = [
-      {id: 0, name: 'Gov', picture: "https://robohash.org/gov"},
+      {id: 0, name: 'Gov', picture: "https://robohash.org/gov",
+        members : [
+          {
+            id: 0,
+            name : "Gov",
+            points : 8,
+          },
+          {
+            id: 1,
+            name : "Bibiche",
+            points : 2,
+          },
+          {
+            id: 2,
+            name : "Pottier",
+            points : 2,
+          },
+          {
+            id: 3,
+            name : "Franky",
+            points : 12,
+          },
+        ]
+      },
       {id: 1, name: 'Godwin', picture: "https://robohash.org/godwin"},
       {id: 2, name: 'Bombasto', picture: "https://robohash.org/bombasto"},
       {id: 3, name: 'Celeritas', picture: "https://robohash.org/celeritas"},
