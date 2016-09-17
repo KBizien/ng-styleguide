@@ -3,11 +3,9 @@ import { Ranking } from './ranking';
 import { User } from './user';
 import { RankingService } from './ranking.service';
 import { Router, ActivatedRoute }       from '@angular/router';
-import { OrderByPoints } from './orderByPoints.pipe';
 
 @Component({
   selector: 'ranking-detail',
-  pipes : [OrderByPoints],
   template: `
 		<div *ngIf="ranking">
       <img src="{{ranking.picture}}" width="100" alt="" />
@@ -17,7 +15,6 @@ import { OrderByPoints } from './orderByPoints.pipe';
       </div>
 		</div>
   `,
-  providers : [RankingService]
 })
 
 export class RankingDetailComponent {

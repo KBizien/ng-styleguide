@@ -1,4 +1,6 @@
-export class InMemoryDataService {
+import { InMemoryDbService } from 'angular2-in-memory-web-api';
+
+export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     let rankings = [
       {id: 0, name: 'Gov', picture: "https://robohash.org/gov",

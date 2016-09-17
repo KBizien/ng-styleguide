@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 import { Ranking } from './ranking';
 
 @Component({
@@ -22,7 +21,6 @@ import { Ranking } from './ranking';
 		margin: 5px;
 	}
   `],
-   directives: [ROUTER_DIRECTIVES],
 })
 
 export class RankingItemComponent {

@@ -1,10 +1,15 @@
-import { provideRouter, RouterConfig }  from '@angular/router';
+import { ModuleWithProviders }  from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
 import { StyleguideComponent } from './styleguide.component';
 import { RankingListComponent } from './ranking-list.component';
 import { RankingDetailComponent } from './ranking-detail.component';
 
-const routes: RouterConfig = [
-  {  path: '', redirectTo: 'rankings'},
+const appRoutes: Routes = [
+  {  path: '',
+     redirectTo: 'rankings',
+     pathMatch: 'full'
+  },
   {
     path: '',
     component: RankingListComponent
@@ -23,6 +28,4 @@ const routes: RouterConfig = [
   }
 ];
 
-export const APP_ROUTER_PROVIDERS = [
-  provideRouter(routes)
-];
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
